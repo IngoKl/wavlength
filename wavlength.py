@@ -86,8 +86,8 @@ def scan(folder, amp_threshold, plot):
 
     for wavfile in files:
         analysis = analyze_wav(wavfile, amp_threshold, plot)
-        length_s =+ analysis['length_s']
-        length_s_above_threshold =+ analysis['length_s_above_threshold']
+        length_s += analysis['length_s']
+        length_s_above_threshold += analysis['length_s_above_threshold']
 
     print(f'{len(files)} files have been analyzed')
     print(f'Overall Length: {round(length_s)} s / {round(length_s/60)} m')
