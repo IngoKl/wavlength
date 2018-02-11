@@ -15,4 +15,5 @@ converts them into 16 bit wav files (converted files can be found in ./16bit).
 Both *wavelength.py* and *collect_wavs.py* expose a simple click CLI interface.
 
 `python wavelength.py --folder ./wavs --amp_threshold=100 --plot=True`
+
 `python collect_wavs.py --scan_folder ./wavs --copy_folder ./collected_wavs`
