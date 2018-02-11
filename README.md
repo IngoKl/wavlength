@@ -7,6 +7,6 @@ The primary use case for this script is to calculate transcription cost, which o
 based on the overall playtime of the files submitted.
 
 ## How To
-Wavelength exposes a simple click CLI interface.
+Wavlength exposes a simple click CLI interface.
 
 `python wavelength.py --folder ./wavs --amp_threshold=100 --plot=True`
