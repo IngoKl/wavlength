@@ -7,6 +7,7 @@ The primary use case for this script is to calculate transcription cost, which o
 based on the overall playtime of the files submitted.
 
 *collect_wavs.py* can be used to automatically copy all existing .wav files in a folder structure into one folder.
+It will automatically add a running index to the file names in order to avoid name collisions.
 
 *scripts/convert_to_16bit.ps1* is a PowerShell script that will take all .wav files in the folder it is run in and
 converts them into 16 bit wav files (converted files can be found in ./16bit).
