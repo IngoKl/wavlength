@@ -8,6 +8,7 @@ import numpy as np
 from numpy import fft as fft
 import click
 import scipy.io.wavfile
+from numpy import fft as fft
 
 
 def get_files(folder):
@@ -19,7 +20,7 @@ def get_files(folder):
     return files
 
 
-def plot_wav(rate, audio_data):
+def plot_wav(rate, audio_data, save_to=False, title='Amplitude/Time'):
     """Generate a time/amplitude plot."""
     time = np.arange(0, float(audio_data.shape[0]), 1) / rate
 
@@ -32,17 +33,34 @@ def plot_wav(rate, audio_data):
         plt.plot(time, audio_data, linewidth=0.01, alpha=0.7, color='#004256')
         plt.xlabel('Time (s)')
         plt.ylabel('Amplitude')
-        plt.show()
+        plt.title(title)
+
+        if save_to:
+            plt.savefig(save_to)
+            plt.close()
+        else:
+            plt.show()
+            plt.close()
     elif channels == 2:
         plt.plot(time, channel_l, linewidth=0.01, alpha=0.7, color='#004256')
         plt.plot(time, channel_r, linewidth=0.01, alpha=0.7, color='#ff0033')
         plt.xlabel('Time (s)')
-        plt.ylabel('Amplitude')
-        plt.show()
+        plt.ylabel('Amplitude)')
+        plt.title(title)
+
+        if save_to:
+            plt.savefig(save_to)
+            plt.close()
+        else:
+            plt.show()
+            plt.close()
 
 
 def analyze_wav(wavfile, amp_threshold, plot=False):
     """Analyze a given wav file based on an amplitude threshold."""
+    rate = 0
+    audio_data = 0
+
     if wavfile.is_file():
         try:
             rate, audio_data = scipy.io.wavfile.read(wavfile.resolve())
