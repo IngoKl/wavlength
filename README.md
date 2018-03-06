@@ -24,6 +24,6 @@ converts them into 16 bit wav files (converted files can be found in ./16bit). T
 
 `python collect_wavs.py --scan_folder ./wavs --copy_folder ./collected_wavs`
 
-`python wavshape.py --folder ./wavs --output ./plots
+`python wavshape.py --folder ./wavs --output ./plots`
 
 If you want to run *convert_to_16bit.ps1* you need to place it inside the folder in which the .wav files reside. The script will create a ./16bit folder and start copying the files.
